@@ -10,11 +10,12 @@
         <link href="{{mix('css/app.css')}}" rel="stylesheet" type="text/css">
     </head>
     <body>
-        
+    <div class="container-fluid">
         <div id="app"> 
-        <examplecomponent></examplecomponent>
+        <!-- <examplecomponent></examplecomponent> -->
         <p>Value dari input text adalah: </p>
         </div>
+</div>
 
         <script src="{{ mix('js/app.js') }}"></script>
     </body>

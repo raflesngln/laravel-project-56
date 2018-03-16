@@ -3,6 +3,9 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
             <h2>KOMPONEN KONTAK FORM</h2>
+                    <div class="form-group">
+            <router-link to="/" class="btn btn-default">Back</router-link>
+        </div>
                 <div class="card card-default">
                     <div class="card-header">Contoh komponen contact form</div>
                     <div class="card-body">
