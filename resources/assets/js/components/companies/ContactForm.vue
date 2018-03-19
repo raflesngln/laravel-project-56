@@ -2,41 +2,41 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-            <h2>COMPONEN COMPANIES CREATE FORM</h2>
+            <h2>KOMPONEN KONTAK FORM</h2>
                     <div class="form-group">
-            <router-link to="/" class="btn btn-default"><i class="fas fa-angle-left fa-1x"></i>  Back</router-link>
+            <router-link to="/" class="btn btn-default">Back</router-link>
         </div>
                 <div class="card card-default">
+                    <div class="card-header">Contoh komponen contact form</div>
                     <div class="card-body">
                 <form v-on:submit="saveForm()">
                     <div class="row">
                         <div class="col-sm-12 form-group">
-                            <label class="control-label">Company name</label>
-                            <input type="text" v-model="company.name" class="form-control">
-                            <p>hello {{company.name}} </p>
+                            <label class="control-label">Contact name</label>
+                            <input type="text" v-model="biodata.name" class="form-control">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12 form-group">
-                            <label class="control-label">Company address</label>
-                            <input type="text" v-model="company.address" class="form-control">
+                            <label class="control-label">address</label>
+                            <input type="text" v-model="biodata.address" class="form-control">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12 form-group">
-                            <label class="control-label">Company website</label>
-                            <input type="text" v-model="company.website" class="form-control">
+                            <label class="control-label">website</label>
+                            <input type="text" v-model="biodata.website" class="form-control">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12 form-group">
-                            <label class="control-label">Company email</label>
-                            <input type="text" v-model="company.email" class="form-control">
+                            <label class="control-label">email</label>
+                            <input type="text" v-model="biodata.email" class="form-control">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12 form-group">
-                            <button class="btn btn-success">Create</button>
+                            <button class="btn btn-success">Save</button>
                         </div>
                     </div>
                 </form>
@@ -51,7 +51,7 @@
     export default {
         data: function () {
             return {
-                company: {
+                biodata: {
                     name: '',
                     address: '',
                     website: '',
@@ -67,7 +67,6 @@
                 axios.post('/api/v1/companies', newCompany)
                     .then(function (resp) {
                         app.$router.push({path: '/'});
-                        console.log('Berhasil simpan data companises');
                     })
                     .catch(function (resp) {
                         console.log(resp);

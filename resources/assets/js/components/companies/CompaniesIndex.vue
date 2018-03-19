@@ -27,14 +27,10 @@
                         <td>{{ company.website }}</td>
                         <td>{{ company.email }}</td>
                         <td>
-                            <router-link :to="{name: 'editCompany', params: {id: company.id}}" class="btn btn-xs btn-default">
-                                Edit
-                            </router-link>
-                            <a href="#"
-                               class="btn btn-xs btn-danger"
-                               v-on:click="deleteEntry(company.id, index)">
-                                Delete
-                            </a>
+            <router-link :to="{name: 'editCompany', params: {id: company.id}}" class="btn btn-xs btn-primary">
+                Edit
+            </router-link>
+            <a href="#" class="btn btn-xs btn-danger" v-on:click="deleteEntry(company.id, index)"> Delete </a>
                         </td>
                     </tr>
                     </tbody>
@@ -56,6 +52,7 @@
             axios.get('/api/v1/companies')
                 .then(function (resp) {
                     app.companies = resp.data;
+                    console.log(resp);
                 })
                 .catch(function (resp) {
                     console.log(resp);

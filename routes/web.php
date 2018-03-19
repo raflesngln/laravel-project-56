@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -9,13 +8,13 @@
 | contains the "web" middleware group. Now create something great!
 */
 Auth::routes();
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/companies', function () {
+    return view('companies');
 });
 Route::get('/home', function () {
     return view('welcome');
 });
-Route::get('/hello/{nama?}', function ($nama='rafles') {
+Route::get('/hello/{nama?}', function ($nama='rafles nainggolan') {
     return 'Hello '.$nama;
 });
 

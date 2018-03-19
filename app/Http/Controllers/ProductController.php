@@ -43,14 +43,15 @@ class ProductController extends Controller
                 'stok'=>'required|min:1',
                 'harga'=>'required|min:1'
         ]);
-        // $file = $request->file('gambar');
+        $file = $request->file('gambar');
         // // echo 'File Name: '.$file->getClientOriginalName();
         // // echo 'File Extension: '.$file->getClientOriginalExtension();  //Display File Extension
         // // echo 'File Size: '.$file->getSize(); //Display File Size
         // // echo 'File Mime Type: '.$file->getMimeType();
         // //Move Uploaded File
-        // $path = 'uploads';
-        // $file->move($path,$file->getClientOriginalName());
+        $path = 'uploads';
+        $nama_file=date('YmdHis').$file->getClientOriginalName();
+        $file->move($path,$nama_file);
 
         $product=new Product;
         $product->nama=$request->nama;
@@ -58,6 +59,7 @@ class ProductController extends Controller
         $product->stok=$request->stok;
         $product->harga=$request->harga;
         $product->deskripsi=$request->deskripsi;
+        $product->gambar= $nama_file;
         $product->save(); // this is elequent;
         return redirect('/product');
     }

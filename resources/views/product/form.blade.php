@@ -3,7 +3,7 @@
 	<section class="content">
 		<div class="row ">
 			<div class="col-12">
-				<form class="form-horizontal" method="POST" action="/product/{{ $action }}{{($action!='store')? '/'.$product['id'] : ''}}">
+				<form class="form-horizontal" method="POST" action="/product/{{ $action }}{{($action!='store')? '/'.$product['id'] : ''}}" enctype="multipart/form-data">
 					{{ csrf_field() }}
 					<div class="modal-header">
 						<h3>Form {{ ucwords($action) }}</h3>

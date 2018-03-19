@@ -20,6 +20,7 @@ class Product extends Migration
             $table->integer('stok');
             $table->double('harga');
             $table->string('deskripsi',200)->nullable();
+            $table->string('gambar',300)->nullable();
             $table->timestamps();
         });
     }

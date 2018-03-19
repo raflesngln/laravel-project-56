@@ -2,18 +2,18 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-            <h2>COMPONEN COMPANIES CREATE FORM</h2>
+            <h2>KOMPONEN KONTAK FORM</h2>
                     <div class="form-group">
-            <router-link to="/" class="btn btn-default"><i class="fas fa-angle-left fa-1x"></i>  Back</router-link>
+            <router-link to="/" class="btn btn-default">Back</router-link>
         </div>
                 <div class="card card-default">
+                    <div class="card-header">Contoh komponen contact form</div>
                     <div class="card-body">
                 <form v-on:submit="saveForm()">
                     <div class="row">
                         <div class="col-sm-12 form-group">
                             <label class="control-label">Company name</label>
                             <input type="text" v-model="company.name" class="form-control">
-                            <p>hello {{company.name}} </p>
                         </div>
                     </div>
                     <div class="row">
@@ -67,7 +67,6 @@
                 axios.post('/api/v1/companies', newCompany)
                     .then(function (resp) {
                         app.$router.push({path: '/'});
-                        console.log('Berhasil simpan data companises');
                     })
                     .catch(function (resp) {
                         console.log(resp);

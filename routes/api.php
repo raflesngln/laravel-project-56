@@ -30,7 +30,16 @@ Route::group(['prefix' => '/v1', 'namespace' => 'Api\V1', 'as' => 'api.'], funct
     Route::resource('companies', 'CompaniesController', ['except' => ['create', 'edit']]);
 });
 
+Route::post('upload_file', function(Request $request){
+    $file = $request->file('photo')->store('uploads');
+    return dd($file);
+    // var_dump(Input::file('file'));
 
+});
+
+
+// otehrs API consept
+// http://localhost:8000/api/items
 Route::get('items', function(){
     return Product::paginate('2');
 });
