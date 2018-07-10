@@ -121,8 +121,8 @@ return [
 
     'providers' => [
         /*my customs */
-        Collective\Html\HtmlServiceProvider::class,
-        Yajra\Datatables\DatatablesServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,   //for form html
+        Yajra\Datatables\DatatablesServiceProvider::class, //for datatables
 
         /*
          * Laravel Framework Service Providers...

@@ -11,8 +11,14 @@ Auth::routes();
 Route::get('/companies', function () {
     return view('companies');
 });
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('welcome');
+});
+Route::get('/vuejs', function () {
+    return view('vuejs');
+});
+Route::get('/include_cdn', function () {
+    return view('include_cdn');
 });
 Route::get('/hello/{nama?}', function ($nama='rafles nainggolan') {
     return 'Hello '.$nama;

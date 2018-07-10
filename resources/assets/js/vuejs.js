@@ -14,18 +14,19 @@ window.Vue.use(VueRouter);
 Vue.use(Vuex)
 
 // coding line start here
-import CompaniesIndex from './components/companies/CompaniesIndex.vue';
-import CompaniesCreate from './components/companies/CompaniesCreate.vue';
-import CompaniesEdit from './components/companies/CompaniesEdit.vue';
+import App from './components/vuejs/add_form.vue';
+import list_data from './components/vuejs/list_data.vue';
 
 const routes = [
-    {path: '/',
-    components: {
-            companiesIndex: CompaniesIndex
-        }
+    {
+    path: '/',
+        components: {
+            Index: App,
+            list: list_data
+            }
     },
-    {path: '/admin/companies/create', component: CompaniesCreate, name: 'createCompany'},
-    {path: '/admin/companies/edit/:id', component: CompaniesEdit, name: 'editCompany'},
+    {path: '/admin/list_data', component: list_data, name: 'list_data'},
+    {path: '/admin/edit/:id', component: App, name: 'editCompany'},
 ]
 
 const router = new VueRouter({ routes })

@@ -37,8 +37,8 @@
 		</tbody>
 		<tfoot>
 			<tr>
-				<th colspan="7">Datas of table</th>
-
+				<th colspan="6">Datas of table</th>
+				<th>{{ $product->links() }}</th>
 			</tr>
 		</tfoot>
 	</table>

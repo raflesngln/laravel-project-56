@@ -18,8 +18,7 @@ use Illuminate\Http\Request;
 // });
 
 
-
-/*
+/* Companies API 
 access postman like with this:
 for all data  methode GET                   :  http://localhost:8000/api/v1/companies
 for detail with id  methode GET             :  http://localhost:8000/api/v1/companies/2
@@ -29,6 +28,7 @@ for delete use methode DELETE               :  http://localhost:8000/api/v1/comp
 Route::group(['prefix' => '/v1', 'namespace' => 'Api\V1', 'as' => 'api.'], function () {
     Route::resource('companies', 'CompaniesController', ['except' => ['create', 'edit']]);
 });
+
 
 Route::post('upload_file', function(Request $request){
     $file = $request->file('photo')->store('uploads');
